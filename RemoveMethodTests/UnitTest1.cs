@@ -18,7 +18,8 @@ namespace RemoveMethodTests
             int expected = 1;
 
             //Act
-            list.Add(color1, color2);
+            list.Add(color1);
+            list.Add(color2);
             list.Remove(color2);
             actual = list.Count;
 
@@ -30,6 +31,9 @@ namespace RemoveMethodTests
         [TestMethod]
         public void RemoveItemFromCustomList_CheckAtIndex0()
         {
+            //Test for index out of range?  this has to do with the indexer property that you will create later
+            //This does make sense until that happens!
+
             //Arrange
             CustomList list = new CustomList();
             string color = "periwinkle";
@@ -56,7 +60,10 @@ namespace RemoveMethodTests
             string actual;
 
             //Act
-            list.Add(color1, color2, expected);
+            list.Add(color1);
+            list.Add(color2);
+            list.Add(expected);
+
             list.Remove(color2);
             actual = list[1];
 
@@ -76,7 +83,8 @@ namespace RemoveMethodTests
             int actual;
 
             //Act
-            list.Add(num1, num2);
+            list.Add(num1)
+            list.Add(num2);
             list.Remove(num2);
             actual = list.Count;
 
@@ -94,7 +102,8 @@ namespace RemoveMethodTests
             int actual;
 
             //Act
-            list.Add(num1, expected);
+            list.Add(num1)
+            list.Add(expected);
             list.Remove(num1);
             actual = list[0];
 
@@ -102,5 +111,24 @@ namespace RemoveMethodTests
             Assert.AreEqual(expected, actual);
         }
 
+        //create a test that tries to remove something that is not in the list.   make sure the count doesn't go down
+        [TestMethod]
+        public void TryToRemoveItemNotInCutomList_CheckCountStaysTheSame()
+        {
+            //Arrange
+            CustomList list = new CustomList();
+            string color1 = "turquoise";
+            string color2 = "old rose";
+            int expected = 1;
+            int actual;
+
+            //Act
+            list.Add(color1);
+            list.Remove(color2);
+            actual = list.Count;
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
     }
 }

@@ -2,6 +2,7 @@
 using System;
 using Custom_List;
 
+
 namespace AddMethodTest
 {
     [TestClass]
@@ -10,6 +11,7 @@ namespace AddMethodTest
         [TestMethod]
         public void AddItemToCustomList_ChekCountEquals()
         {
+            
             //Arrange
             CustomList list = new CustomList();
             string color = "periwinkle";
@@ -119,9 +121,9 @@ namespace AddMethodTest
             list.Add(color1);
             list.Add(color2);
             list.Add(color3);
-            list.Add(color4);
-            list.Add(color5);
-            list.Add(color6);
+            list.Add(color4);//[azure, royal blue, turquoise, periwinkle]
+            list.Add(color5);//[azure, royal blue, turquoise, periwinkle, teal, null, null, null]
+            list.Add(color6);//[azure, royal blue, turquoise, periwinkle, teal, evergreen, null, null]
             list.Add(color7);
             
             actual = list.Capacity;
@@ -131,22 +133,35 @@ namespace AddMethodTest
         }
 
         [TestMethod]
-        public void AddItemsToCustomList_CheckOldListGone()
+        public void AddItemsToCustomList_CheckToSeeIfValuesFromOriginalListWereCopiedOver_ZeroIndexIsTheSameAsItWasBefore()
         {
+            //Arrange
+            CustomList list = new CustomList();
+            string color1 = "azure";
+            string color2 = "royal blue";
+            string color3 = "turquoise";
+            string color4 = "periwinkle";
+            string color5 = "teal";
+            string color6 = "evergreen";
+            string color7 = "cerulean";
+            string expected = "azure";
+            string actual;
 
+            //Act
+            list.Add(color1);
+            list.Add(color2);
+            list.Add(color3);
+            list.Add(color4);
+            list.Add(color5);
+            list.Add(color6);
+            list.Add(color7);
+
+            actual = list[0];
+
+            //Assert
+            Assert.AreEqual(expected, actual);
         }
 
-        [TestMethod]
-        public void AddItemsToCustomList_CheckValuesStoredSomewhere()
-        {
-
-        }
-
-        [TestMethod]
-        public void AddItemsToCustomList_CheckValuesAreStoredInNewList()
-        {
-
-        }
     }
 
 }
