@@ -13,7 +13,7 @@ namespace AddMethodTest
         {
             
             //Arrange
-            CustomList list = new CustomList();
+            CustomList<string> list = new CustomList<string>();
             string color = "periwinkle";
             int actual;
             int expected = 1;
@@ -30,7 +30,7 @@ namespace AddMethodTest
         public void AddItemToCustomList_ChekAtIndex0()
         {
             //Arange
-            CustomList list = new CustomList();
+            CustomList<string> list = new CustomList<string>();
             string expected = "periwinkel";
             string actual;
 
@@ -46,7 +46,7 @@ namespace AddMethodTest
         public void AddItemsToCustomList_CheckForItemAtIndex3()
         {
             //Arrange
-            CustomList list = new CustomList();
+            CustomList<string> list = new CustomList<string>();
             string color1 = "azure";
             string color2 = "royal blue";
             string color3 = "turquoise";
@@ -70,7 +70,7 @@ namespace AddMethodTest
         public void AddItemToCustomList_CheckIntCanBeAdded()
         {
             //Arrange
-            CustomList list = new CustomList();
+            CustomList<int> list = new CustomList<int>();
             int myNumber = 24;
             
             int expected = 1;
@@ -88,7 +88,7 @@ namespace AddMethodTest
         public void AddItemToCustomList_CheckIntAtIndex0()
         {
             //Arrange
-            CustomList list = new CustomList();
+            CustomList<int> list = new CustomList<int>();
             int expected = 24;
             int actual;
 
@@ -105,7 +105,7 @@ namespace AddMethodTest
         public void AddItemsToCustomList_CheckNewCapacity()
         {
             //Arrange
-            CustomList list = new CustomList();
+            CustomList<string> list = new CustomList<string>();
             string color1 = "azure";
             string color2 = "royal blue";
             string color3 = "turquoise";
@@ -136,7 +136,7 @@ namespace AddMethodTest
         public void AddItemsToCustomList_CheckToSeeIfValuesFromOriginalListWereCopiedOver_ZeroIndexIsTheSameAsItWasBefore()
         {
             //Arrange
-            CustomList list = new CustomList();
+            CustomList<string> list = new CustomList<string.();
             string color1 = "azure";
             string color2 = "royal blue";
             string color3 = "turquoise";

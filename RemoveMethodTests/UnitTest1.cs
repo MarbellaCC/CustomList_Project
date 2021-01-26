@@ -11,7 +11,7 @@ namespace RemoveMethodTests
         public void RemoveItemFromCustomList_CheckCountEquals()
         {
             //Arrange
-            CustomList list = new CustomList();
+            CustomList<string> list = new CustomList<string>();
             string color1 = "periwinkle";
             string color2 = "azure";
             int actual;
@@ -35,7 +35,7 @@ namespace RemoveMethodTests
             //This does make sense until that happens!
 
             //Arrange
-            CustomList list = new CustomList();
+            CustomList<string> list = new CustomList<string>();
             string color = "periwinkle";
             string expected = null;
             string actual;
@@ -53,7 +53,7 @@ namespace RemoveMethodTests
         public void RemoveItemFromCustomList_CheckAtIndex1()
         {
             //Arrange
-            CustomList list = new CustomList();
+            CustomList<string> list = new CustomList<string>();
             string color1 = "azure";
             string color2 = "royal blue";
             string expected = "turquoise";
@@ -76,7 +76,7 @@ namespace RemoveMethodTests
         public void RemoveIntItemFromCustomList_CheckCount()
         {
             //Arrange
-            CustomList list = new CustomList();
+            CustomList<int> list = new CustomList<int>();
             int num1 = 32;
             int num2 = 99;
             int expected = 1;
@@ -96,13 +96,13 @@ namespace RemoveMethodTests
         public void RemoveIntItemFromCustomList_CheckAtIndex0()
         {
             //Arrange
-            CustomList list = new CustomList();
+            CustomList<int> list = new CustomList<int>();
             int num1 = 32;
             int expected = 99;
             int actual;
 
             //Act
-            list.Add(num1)
+            list.Add(num1);
             list.Add(expected);
             list.Remove(num1);
             actual = list[0];
@@ -116,7 +116,7 @@ namespace RemoveMethodTests
         public void TryToRemoveItemNotInCutomList_CheckCountStaysTheSame()
         {
             //Arrange
-            CustomList list = new CustomList();
+            CustomList<string> list = new CustomList<string>();
             string color1 = "turquoise";
             string color2 = "old rose";
             int expected = 1;
