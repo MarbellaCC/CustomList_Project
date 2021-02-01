@@ -11,16 +11,16 @@ namespace ToStringMethodTest
         public void ChangeIntToStringTest_CheckIndex0()
         {
             //Arrange
-            CustomList<string> list = new CustomList<string>();
+            CustomList<int> items = new CustomList<int>();
             string expected = "2510";
             string actual;
 
             //Act
-            list.Add(2);
-            list.Add(5);
-            list.Add(10);
+            items.Add(2);
+            items.Add(5);
+            items.Add(10);
 
-            actual = list.ToString();
+            actual = items.ToString();
 
             //Assert
             Assert.AreEqual(expected, actual);
@@ -31,14 +31,14 @@ namespace ToStringMethodTest
         public void ChangeDoubleToStringTest_CheckCount()
         {
             //Arrange
-            CustomList<string> list = new CustomList<string>();
+            CustomList<double> items = new CustomList<double>();
             double num1 = 24.4;
             int expected = 1;
             int actual;
 
             //Act
-            list.Add(num1);
-            actual = list.Count;
+            items.Add(num1);
+            actual = items.Count;
 
             //Assert
             Assert.AreEqual(expected, actual);
