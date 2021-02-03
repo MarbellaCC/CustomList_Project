@@ -117,6 +117,16 @@ namespace Custom_List
             count--;
         }
 
+        public override string ToString()
+        {
+            string m = "";
+            for (int i = 0; i < Count; i++)
+            { 
+                m += items[i];
+            }
+            return m;
+        }
+
         public IEnumerator GetEnumerator()
         {
             //for loop

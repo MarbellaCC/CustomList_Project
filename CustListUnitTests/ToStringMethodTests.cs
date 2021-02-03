@@ -47,7 +47,7 @@ namespace ToStringMethodTest
             //Arrange
             CustomList<bool> items = new CustomList<bool>();
             bool marbella = true;
-            string expected = "true";
+            string expected = "True";
             string actual;
 
             //Act
