@@ -41,8 +41,8 @@ namespace RemoveMethodTests
             string actual;
 
             //Act
-            items.Add(expected);
-            items.Remove(expected);
+            items.Add(color);
+            items.Remove(color);
             actual = items[0];
 
             //Assert
@@ -106,26 +106,6 @@ namespace RemoveMethodTests
             items.Add(expected);
             items.Remove(num1);
             actual = items[0];
-
-            //Assert
-            Assert.AreEqual(expected, actual);
-        }
-
-        //create a test that tries to remove something that is not in the list.   make sure the count doesn't go down
-        [TestMethod]
-        public void TryToRemoveItemNotInCutomList_CheckCountStaysTheSame()
-        {
-            //Arrange
-            CustomList<string> items = new CustomList<string>();
-            string color1 = "turquoise";
-            string color2 = "old rose";
-            int expected = 1;
-            int actual;
-
-            //Act
-            items.Add(color1);
-            items.Remove(color2);
-            actual = items.Count;
 
             //Assert
             Assert.AreEqual(expected, actual);

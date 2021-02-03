@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,25 +7,61 @@ using System.Threading.Tasks;
 
 namespace Custom_List
 {
-    public class CustomList<T>
+    public class CustomList<T> : IEnumerable
     {
         //member variables
         private T[] items;
-        public int Count;
-        public int Capacity;
+        private int count;
+        public int Count
+        {
+            get
+            {
+                return count;
+            }
+        }
+
+        private int capacity;
+        public int Capacity
+        {
+            get
+            {
+                return capacity;
+            }
+            set
+            {
+                capacity = value;
+            }
+        }
 
 
-        public T this[int i] => items[i];
+
+        public T this[int i]
+        {
+            get
+            {
+                if (i < 0 && i >= count)
+                {
+                    throw new IndexOutOfRangeException("Index out of range");
+                }
+                return items[i];
+            }
+            set
+            {
+                if (i < 0 && i >= count)
+                {
+                    throw new IndexOutOfRangeException("Index out of range");
+                }
+                items[i] = value;
+            }
+        }
 
         //constructor
         public CustomList()
         {
-            Count = 0;
+            count = 0;
             Capacity = 4;
             items = new T[Capacity];
         }
-
-
 
         //member methods
         public void Add(T item)
@@ -44,8 +81,7 @@ namespace Custom_List
 
             if (Count < Capacity)
             {
-                items[Count++] = item;
-
+                items[count++] = item;
             }
             else if (Count >= Capacity)
             {
@@ -57,42 +93,38 @@ namespace Custom_List
                 {
                     tempItems[i] = items[i];
                 }
-                tempItems[Count++] = item;
+                tempItems[count++] = item;
                 items = tempItems;
             }
         }
 
         public void Remove(T item)
         {
-
-            // List of numbers 1 2 3 4 5 6
-            // remove 3
-            // find 3
-            // when I find it, shift everything past it down one spot
-            // 1 2 4 5 6
-            for (int i = 0; i < items.Length; i++)
+            T[] newItems = new T[Capacity];
+            for (int i = 0; i < Count; i++)
             {
                 if (items[i].Equals(item))
                 {
-                    items[i] = items[i + 1];
+                   for (int j = i; j < Count - 1; j++)
+                   {
+                        newItems[j] = items[i + 1];
+                   }
+                   break;
                 }
+                newItems[i] = items[i];
             }
-
-
-            // go through the array
-            // WHEN I find the item I'm looking for, start this process
-            // once I hit the final item, how do I deal with an out of bounds exception?
-
-
-
-
+            items = newItems;
+            count--;
         }
 
-       
-    
-        
-
-
-
+        public IEnumerator GetEnumerator()
+        {
+            //for loop
+            ////yield return
+            for(int i = 0; i < items.Length; i++)
+            {
+                yield return items[i];
+            }
+        }
     }
 }
