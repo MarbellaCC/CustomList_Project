@@ -13,7 +13,7 @@ namespace OverloadPlusMethodTests
             //Arrange
             CustomList<string> items = new CustomList<string>();
             CustomList<string> items2 = new CustomList<string>();
-            CustomList<string> result = new CustomList<string>();
+            CustomList<string> result;
             string color1 = "powder blue";
             string color2 = "ice blue";
             int expected = 2;
@@ -35,7 +35,7 @@ namespace OverloadPlusMethodTests
             //Arrange
             CustomList<int> items = new CustomList<int>();
             CustomList<int> items2 = new CustomList<int>();
-            CustomList<int> result = new CustomList<int>();
+            CustomList<int> result;
             int expected = 1;
             int num2 = 2;
             int actual;
@@ -56,7 +56,7 @@ namespace OverloadPlusMethodTests
             //Arrange
             CustomList<int> items = new CustomList<int>();
             CustomList<int> items2 = new CustomList<int>();
-            CustomList<int> result = new CustomList<int>();
+            CustomList<int> result;
             int num1 = 1;
             int num2 = 2;
             int expected = 3;
@@ -81,7 +81,7 @@ namespace OverloadPlusMethodTests
             //Arrange
             CustomList<int> items = new CustomList<int>();
             CustomList<int> items2 = new CustomList<int>();
-            CustomList<int> result = new CustomList<int>();
+            CustomList<int> result;
             int expected = 0;
             int actual;
 
@@ -99,7 +99,7 @@ namespace OverloadPlusMethodTests
             //Arrange
             CustomList<int> items = new CustomList<int>();
             CustomList<int> items2 = new CustomList<int>();
-            CustomList<int> result = new CustomList<int>();
+            CustomList<int> result;
             int num1 = 10;
             int num2 = 20;
             int expected = 2;
