@@ -55,6 +55,7 @@
     <Compile Include="ToStringMethodTests.cs" />
     <Compile Include="OverloadPlusMethodTests.cs" />
     <Compile Include="OverloadMinusMethodTests.cs" />
+    <Compile Include="ZipMethodTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
