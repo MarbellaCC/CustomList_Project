@@ -30,7 +30,7 @@ namespace ZipMethodTests
             items2.Add(num4);
             items.Add(num5);
             items2.Add(num6);
-            result = items.Zip(items2);
+            result = items.Zip(items, items2);
             actual = result.Count;
 
             //Assert
@@ -56,7 +56,7 @@ namespace ZipMethodTests
             items.Add(color2);
             items2.Add(color3);
             items2.Add(color4);
-            result = items.Zip(items2);
+            result = items.Zip(items, items2);
             actual = result.Count;
 
             //Assert
@@ -80,12 +80,14 @@ namespace ZipMethodTests
             items2.Add(expected);
             items.Add(num3);
             items2.Add(num4);
-            result = items.Zip(items2);
+            result = items.Zip(items, items2);
             actual = result[1];
 
             //Assert
             Assert.AreEqual(expected, actual);
         }
+        
+        [TestMethod]
         public void ZipMethod_JoinIntListsFirstListShorterThanSecond_CheckAtIndex5()
         {
             //Arrange
@@ -108,7 +110,7 @@ namespace ZipMethodTests
             items2.Add(num4);
             items2.Add(num5);
             items2.Add(num6);
-            result = items.Zip(items2);
+            result = items.Zip(items, items2);
             actual = result[5];
 
             //Assert
@@ -138,7 +140,7 @@ namespace ZipMethodTests
             items2.Add(num4);
             items.Add(num5);
             items.Add(num6);
-            result = items.Zip(items2);
+            result = items.Zip(items, items2);
             actual = result[5];
 
             //Assert

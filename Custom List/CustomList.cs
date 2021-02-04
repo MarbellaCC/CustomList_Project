@@ -159,6 +159,48 @@ namespace Custom_List
             return result;
         }
 
+        public CustomList<T> Zip(CustomList<T> list1, CustomList<T> list2)
+        {
+            CustomList<T> result = new CustomList<T>();
+            int j = 0;
+
+            if (list1.Count == list2.Count)
+            {
+                for(int i = 0; i < list1.Count; i++)
+                {
+                    result.Add(list1[i]);
+                    result.Add(list2[i]);
+                }
+            }
+            else if(list1.Count > list2.Count)
+            {
+                for(int i = 0; i < list2.Count; i++)
+                {
+                    result.Add(list1[i]);
+                    result.Add(list2[i]);
+                    j++;
+                }
+                for(int i = j; i < list1.Count; i++)
+                {
+                    result.Add(list1[i]);
+                }
+            }
+            else
+            {
+                for(int i = 0; i < list1.Count; i++)
+                {
+                    result.Add(list1[i]);
+                    result.Add(list2[i]);
+                    j++;
+                }
+                for (int i = j; i < list2.Count; i++)
+                {
+                    result.Add(list2[i]);
+                }
+            }
+            return result;
+        }
+
         public IEnumerator GetEnumerator()
         {
             //for loop
