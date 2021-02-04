@@ -123,27 +123,21 @@ namespace OverloadMinusMethodTests
         }
 
         [TestMethod]
-        public void OverloadMinusOperator_RemoveEverythingFromIntList_CheckCount()
+        public void OverloadMinusOperator_RemoveEverythingFromIntList_CheckIndex0()
         {
             //Arrange
             CustomList<int> items = new CustomList<int>();
             CustomList<int> items2 = new CustomList<int>();
             CustomList<int> result;
             int num1 = 1;
-            int num2 = 2;
-            int num3 = 3;
             int expected = 0;
             int actual;
 
             //Act
             items.Add(num1);
-            items.Add(num2);
-            items.Add(num3);
             items2.Add(num1);
-            items2.Add(num2);
-            items2.Add(num3);
             result = items - items2;
-            actual = result.Count;
+            actual = result[0];
 
             //Assert
             Assert.AreEqual(expected, actual);

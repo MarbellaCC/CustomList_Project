@@ -130,13 +130,31 @@ namespace Custom_List
         public static CustomList<T> operator+(CustomList<T> list1, CustomList<T> list2)
         {
             CustomList<T> result = new CustomList<T>();
-            for (int i = 0; i < list1.count; i++)
+            for (int i = 0; i < list1.Count; i++)
             {
                 result.Add(list1[i]);
             }
-            for (int i = 0; i < list2.count; i++)
+            for (int i = 0; i < list2.Count; i++)
             {
                 result.Add(list2[i]);
+            }
+            return result;
+        }
+
+        public static CustomList<T> operator-(CustomList<T> list1, CustomList<T> list2)
+        {
+            CustomList<T> result;
+            result = list1;
+
+            for (int i = 0; i < result.Count; i++)
+            {
+                for (int j = 0; j < list2.Count; j++)
+                {
+                    if (result[i].Equals(list2[j]))
+                    {
+                        result.Remove(list2[j]);
+                    }
+                }
             }
             return result;
         }
