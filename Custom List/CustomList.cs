@@ -33,8 +33,6 @@ namespace Custom_List
             }
         }
 
-
-
         public T this[int i]
         {
             get

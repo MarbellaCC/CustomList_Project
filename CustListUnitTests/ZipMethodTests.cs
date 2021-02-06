@@ -62,6 +62,7 @@ namespace ZipMethodTests
             //Assert
             Assert.AreEqual(expected, actual);
         }
+        
         [TestMethod]
         public void ZipMethod_JoinIntLists_CheckAtIndex1()
         {
